@@ -18,12 +18,6 @@ class testing extends Controller
         return view("file");
     }
 
-    public function showall()
-    {
-        $user = file::all();
-        return view('showall', compact('user'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -56,6 +50,12 @@ class testing extends Controller
 
         $user->save();
         return redirect("show");
+    }
+
+    public function showall()
+    {
+        $user = file::all();
+        return view('showall', compact('user'));
     }
 
     /**
